@@ -3,3 +3,7 @@
 -[ ] amount を private にする
 -[x] Dollar の副作用をどうする
 -[ ] Money の丸め処理をどうする？
+-[x] PartialEq / Eq
+-[ ] hashCode()
+-[ ] None との等価性
+-[ ] 他のオブジェクトとの等価性比較

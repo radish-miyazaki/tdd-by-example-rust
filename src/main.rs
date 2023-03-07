@@ -14,6 +14,16 @@ impl Dollar {
     }
 }
 
+impl PartialEq for Dollar {
+    fn eq(&self, other: &Self) -> bool {
+        self.amount == other.amount
+    }
+
+    fn ne(&self, other: &Self) -> bool {
+        self.amount != other.amount
+    }
+}
+
 fn main() {
     println!("Hello, world!");
 }
@@ -29,5 +39,11 @@ mod tests {
         assert_eq!(10, product.amount);
         let product = five.times(3);
         assert_eq!(15, product.amount);
+    }
+
+    #[test]
+    fn dollar_equality_test() {
+        assert!(Dollar::new(5) == Dollar::new(5));
+        assert!(Dollar::new(5) != Dollar::new(6))
     }
 }
