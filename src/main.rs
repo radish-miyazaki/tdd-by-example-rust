@@ -7,8 +7,10 @@ impl Dollar {
         Self { amount }
     }
 
-    fn times(&mut self, multiplier: i32) {
-        self.amount *= multiplier;
+    fn times(&self, multiplier: i32) -> Self {
+        Self {
+            amount: self.amount * multiplier,
+        }
     }
 }
 
@@ -21,9 +23,11 @@ mod tests {
     use super::*;
 
     #[test]
-    fn money_test() {
-        let mut five = Dollar::new(5);
-        five.times(2);
-        assert_eq!(10, five.amount);
+    fn dollar_multiple_test() {
+        let five = Dollar::new(5);
+        let product = five.times(2);
+        assert_eq!(10, product.amount);
+        let product = five.times(3);
+        assert_eq!(15, product.amount);
     }
 }
