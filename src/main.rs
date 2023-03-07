@@ -1,3 +1,4 @@
+#[derive(Eq, PartialEq)]
 struct Dollar {
     amount: i32,
 }
@@ -11,16 +12,6 @@ impl Dollar {
         Self {
             amount: self.amount * multiplier,
         }
-    }
-}
-
-impl PartialEq for Dollar {
-    fn eq(&self, other: &Self) -> bool {
-        self.amount == other.amount
-    }
-
-    fn ne(&self, other: &Self) -> bool {
-        self.amount != other.amount
     }
 }
 
